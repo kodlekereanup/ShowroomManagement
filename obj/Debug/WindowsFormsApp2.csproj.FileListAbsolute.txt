@@ -1,0 +1,12 @@
+D:\dev\oracleproject\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+D:\dev\oracleproject\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+D:\dev\oracleproject\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+D:\dev\oracleproject\WindowsFormsApp2\bin\Debug\Oracle.DataAccess.dll
+D:\dev\oracleproject\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csprojAssemblyReference.cache
+D:\dev\oracleproject\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+D:\dev\oracleproject\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+D:\dev\oracleproject\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+D:\dev\oracleproject\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+D:\dev\oracleproject\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CopyComplete
+D:\dev\oracleproject\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+D:\dev\oracleproject\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb

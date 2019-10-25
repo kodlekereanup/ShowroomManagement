@@ -1,0 +1,17 @@
+D:\dev\oracleproject\WindowsFormsApp2\bin\x64\Debug\WindowsFormsApp2.exe.config
+D:\dev\oracleproject\WindowsFormsApp2\bin\x64\Debug\WindowsFormsApp2.exe
+D:\dev\oracleproject\WindowsFormsApp2\bin\x64\Debug\WindowsFormsApp2.pdb
+D:\dev\oracleproject\WindowsFormsApp2\bin\x64\Debug\Oracle.DataAccess.dll
+D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\WindowsFormsApp2.csprojAssemblyReference.cache
+D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\WindowsFormsApp2.Properties.Resources.resources
+D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\WindowsFormsApp2.csproj.CopyComplete
+D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\WindowsFormsApp2.exe
+D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\WindowsFormsApp2.pdb
+D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\WindowsFormsApp2.Welcome.resources
+D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\WindowsFormsApp2.SignUp.resources
+D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\WindowsFormsApp2.Inventory.resources
+D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\WindowsFormsApp2.Login.resources
+D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\WindowsFormsApp2.MainMenu.resources
+D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\WindowsFormsApp2.InsertInventory.resources
