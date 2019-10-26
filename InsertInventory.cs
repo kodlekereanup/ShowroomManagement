@@ -79,7 +79,7 @@ namespace WindowsFormsApp2
             con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
-            cmd.CommandText = "insert into inventory values(id.nextval,'" + textBox2.Text + "'," + "'" + textBox3.Text + "'," + textBox4.Text + ")";
+            cmd.CommandText = "insert into inventory values(incrementer.nextval,'" + textBox2.Text + "'," + "'" + textBox3.Text + "'," + textBox4.Text + ")";
             //cmd.CommandType = CommandType.Text;
             int rw = cmd.ExecuteNonQuery();
             if (rw == 0)
