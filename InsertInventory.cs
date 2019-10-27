@@ -20,35 +20,9 @@ namespace WindowsFormsApp2
         public InsertInventory()
         {
             InitializeComponent();
-            getColumns();
            
         }
-
-
-        public void getColumns()
-        {
-            List<string> ll = new List<string>();
-
-            OracleConnection con = new OracleConnection("Data Source=localhost;User Id=PROJECT;Password=anup;");
-            con.Open();
-            OracleCommand cmd = new OracleCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "select * from inventory";
-            cmd.CommandType = CommandType.Text;
-            OracleDataReader rd = cmd.ExecuteReader();
-
-            rd.Read();
-            for (int i = 0; i < rd.FieldCount; i++)
-            {
-                ll.Add(rd.GetName(i));
-            }
-
-            con.Close();
-
-
-
-        }
-
+        
         private bool searchValueInDatabase(int id)
         {
             OracleConnection con = new OracleConnection("Data Source=localhost;User Id=PROJECT;Password=anup;");
@@ -113,8 +87,7 @@ namespace WindowsFormsApp2
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            dataGridView1.Update();
-            dataGridView1.Refresh();
+            InsertInventory_Load(sender, e);
         }
 
         private void Button5_Click(object sender, EventArgs e)
