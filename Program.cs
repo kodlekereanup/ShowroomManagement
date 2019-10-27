@@ -16,11 +16,11 @@ namespace WindowsFormsApp2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-            Application.Run(new Welcome());
-=======
+
+            //Application.Run(new Welcome());
+
             Application.Run(new form1.Form1());
->>>>>>> d54347ef180c1c21d592dfa80571a4e39a1124b8
+
         }
     }
 }

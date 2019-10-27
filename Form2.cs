@@ -101,5 +101,13 @@ namespace form1
 
             }
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            WindowsFormsApp2.SignUp sg = new WindowsFormsApp2.SignUp();
+            this.Hide();
+            sg.ShowDialog();
+            this.Close();
+        }
     }
 }

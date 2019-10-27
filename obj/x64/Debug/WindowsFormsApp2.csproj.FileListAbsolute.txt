@@ -15,3 +15,7 @@ D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\WindowsFormsApp2.Inventory.r
 D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\WindowsFormsApp2.Login.resources
 D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\WindowsFormsApp2.MainMenu.resources
 D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\WindowsFormsApp2.InsertInventory.resources
+D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\form1.Form1.resources
+D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\form1.Form2.resources
+D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\form1.Form3.resources
+D:\dev\oracleproject\WindowsFormsApp2\obj\x64\Debug\form1.Form4.resources
