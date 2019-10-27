@@ -14,7 +14,8 @@ namespace WindowsFormsApp2
 {
     public partial class InsertInventory : Form
     {
-
+        // flags for selecting the the right CRUD operation and displaying 
+        // the correct text on the button
         bool insert = false, update = false, delete = false, change = false;
        
         public InsertInventory()
@@ -45,7 +46,11 @@ namespace WindowsFormsApp2
 
             con.Close();
 
-
+            //TODO: Make this allocation dynamic
+            label1.Text = ll[0];
+            label2.Text = ll[1];
+            label3.Text = ll[2];
+            label4.Text = ll[3];
 
         }
 
@@ -113,8 +118,7 @@ namespace WindowsFormsApp2
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            dataGridView1.Update();
-            dataGridView1.Refresh();
+            InsertInventory_Load(sender, e);
         }
 
         private void Button5_Click(object sender, EventArgs e)
@@ -282,6 +286,11 @@ namespace WindowsFormsApp2
             changeFieldState(false);
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void TextBox2_TextChanged(object sender, EventArgs e)
         {
             enableButton();
@@ -313,9 +322,5 @@ namespace WindowsFormsApp2
             }
         }
 
-
-        // string test = "insert into inventory values(id.nextval, 'textbox1.text', 'textbox2.text', textbox3.text)";
     }
 }
-
-// enable button function checks if all three textboxes are having some data

@@ -49,7 +49,7 @@ namespace form1
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            timer1.Start();
+            //timer1.Start();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -72,6 +72,14 @@ namespace form1
             Form2 ff = new Form2();
             this.Hide();
             ff.ShowDialog();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form4 service = new Form4();
+            this.Hide();
+            service.ShowDialog();
             this.Close();
         }
     }
