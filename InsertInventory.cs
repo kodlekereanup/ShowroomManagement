@@ -73,7 +73,6 @@ namespace WindowsFormsApp2
             textBox2.ReadOnly = state2;
             textBox3.ReadOnly = state3;
             textBox4.ReadOnly = state4;
-
         }
 
         
@@ -85,7 +84,7 @@ namespace WindowsFormsApp2
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
             cmd.CommandText = "insert into inventory values(incrementer.nextval,'" + textBox2.Text + "'," + "'" + textBox3.Text + "'," + textBox4.Text + ")";
-            //cmd.CommandType = CommandType.Text;
+            cmd.CommandType = CommandType.Text;
             int rw = cmd.ExecuteNonQuery();
             if (rw == 0)
             {
@@ -139,7 +138,6 @@ namespace WindowsFormsApp2
             MessageBox.Show("Please enter the ID of the row you want to update");
             changeFieldState(false);
            
-            
         }
 
         public void updateRecords(int id)
@@ -149,7 +147,7 @@ namespace WindowsFormsApp2
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
             cmd.CommandText = "update inventory set model='" + textBox2.Text + "',type='" + textBox3.Text + "',amount=" + textBox4.Text + " where id=" + textBox1.Text;
-            //cmd.CommandType = CommandType.Text;
+            cmd.CommandType = CommandType.Text;
             int rw = cmd.ExecuteNonQuery();
             if (rw == 0)
             {
@@ -160,7 +158,6 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Successfull!");
             }
             con.Close();
-            // "update inventory set model=textbox2 
         }
 
         public void deleteRecords(int id)
@@ -178,7 +175,7 @@ namespace WindowsFormsApp2
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = con;
                 cmd.CommandText = "delete from inventory where id=" + textBox1.Text;
-                //cmd.CommandType = CommandType.Text;
+                cmd.CommandType = CommandType.Text;
                 int rw = cmd.ExecuteNonQuery();
                 if (rw == 0)
                 {

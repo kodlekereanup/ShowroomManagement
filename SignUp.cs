@@ -33,7 +33,7 @@ namespace WindowsFormsApp2
             System.Security.Cryptography.SHA512Managed sha512 =
                 new System.Security.Cryptography.SHA512Managed();
             byte[] hash = sha512.ComputeHash(bytes);
-
+            
             return BitConverter.ToString(hash).Replace("-", "");
         }
 
@@ -110,7 +110,6 @@ namespace WindowsFormsApp2
                 // store the salt and the salted password in the signup database
                 String salt = createSalt(10);
                 String hashedPass = GenerateSHA512Hash(textBox2.Text, salt);
-
                 OracleConnection con = new OracleConnection("Data Source=localhost;User Id=PROJECT;Password=anup;");
                 con.Open();
                 OracleCommand cmd = new OracleCommand();

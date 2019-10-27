@@ -86,7 +86,7 @@ namespace form1
                 // 3. compare hash with signup hash
                 else if (su.GenerateSHA512Hash(textBox2.Text, getSalt(textBox1.Text)) == databasePass)
                 {
-
+                    
                     MessageBox.Show("Login Successfull!");
                     Form3 mm = new Form3();
                     this.Hide();
