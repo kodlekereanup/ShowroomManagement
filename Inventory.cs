@@ -64,5 +64,13 @@ namespace WindowsFormsApp2
             this.Close();
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            form1.Form3 f3 = new form1.Form3();
+            this.Hide();
+            f3.ShowDialog();
+            this.Close();
+        }
     }
 }

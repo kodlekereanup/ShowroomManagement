@@ -116,7 +116,7 @@ namespace WindowsFormsApp2
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = con;
                 cmd.CommandText = "insert into signup values(ei.nextval,'" + textBox1.Text + "'," + "'" + salt + "','" + hashedPass + "')";
-                //cmd.CommandType = CommandType.Text;
+                cmd.CommandType = CommandType.Text;
                 int rw = cmd.ExecuteNonQuery();
                 if (rw == 0)
                 {

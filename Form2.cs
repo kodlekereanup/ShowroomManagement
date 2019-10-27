@@ -24,11 +24,25 @@ namespace form1
             con = new OracleConnection("Data Source=localhost;User Id=PROJECT;Password=anup;");
         }
 
+        String getSalt(String username)
+        {
+            OracleConnection con = new OracleConnection("Data Source=localhost;User Id=PROJECT;Password=anup;");
+            con.Open();
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select salt from signup where username='" + username + "'";
+            cmd.CommandType = CommandType.Text;
+            OracleDataReader rd = cmd.ExecuteReader();
+            rd.Read();
+            return rd["salt"].ToString();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             //Form3 main = new Form3();
             //this.Hide();
             //main.ShowDialog(this);
+            WindowsFormsApp2.SignUp su = new WindowsFormsApp2.SignUp();
             if (textBox1.Text == "")
             {
                 MessageBox.Show("Username cannot be empty!");
@@ -41,8 +55,8 @@ namespace form1
             else
             {
                 int flag = 0;
-                string str = "";
-                query = "select * from logindes where username='" + textBox1.Text + "' ";
+                String databasePass = "";
+                query = "select * from signup where username='" + textBox1.Text + "' ";
                 cmd = new OracleCommand(query, con);
 
                 con.Open();
@@ -50,7 +64,7 @@ namespace form1
 
                 while (rd.Read())
                 {
-                    str = rd["password"].ToString();
+                    databasePass = rd["password"].ToString();
                     flag = 1;
                 }
 
@@ -65,13 +79,18 @@ namespace form1
                     textBox1.Focus();
 
                 }
-                else if (textBox2.Text == str)
+                // change this to accomodate ith hashing
+                // textbox2.text should be hashed and matched with str
+                // 1. Find the username and his corresponding salt
+                // 2. concatenate the salt with textbox pass and hash
+                // 3. compare hash with signup hash
+                else if (su.GenerateSHA512Hash(textBox2.Text, getSalt(textBox1.Text)) == databasePass)
                 {
 
                     MessageBox.Show("Login Successfull!");
                     Form3 mm = new Form3();
                     this.Hide();
-                    mm.ShowDialog(this);
+                    mm.ShowDialog();
                     this.Close();
 
                 }
