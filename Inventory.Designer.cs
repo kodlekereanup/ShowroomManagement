@@ -37,7 +37,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(33, 415);
+            this.button1.Location = new System.Drawing.Point(299, 415);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(179, 23);
             this.button1.TabIndex = 0;
@@ -57,22 +57,23 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(263, 415);
+            this.button2.Location = new System.Drawing.Point(547, 415);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(198, 23);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Add Cars";
+            this.button2.Text = "Modify Inventory Data";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(415, 415);
+            this.button3.Location = new System.Drawing.Point(33, 415);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 23);
+            this.button3.Size = new System.Drawing.Size(198, 23);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Remove Cars";
+            this.button3.Text = "Back";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Inventory
             // 

@@ -14,15 +14,45 @@ namespace WindowsFormsApp2
 {
     public partial class InsertInventory : Form
     {
-
+        // flags for selecting the the right CRUD operation and displaying 
+        // the correct text on the button
         bool insert = false, update = false, delete = false, change = false;
        
         public InsertInventory()
         {
             InitializeComponent();
-           
+            getColumns();
         }
-        
+
+        public void getColumns()
+        {
+            List<string> ll = new List<string>();
+
+            OracleConnection con = new OracleConnection("Data Source=localhost;User Id=PROJECT;Password=anup;");
+            con.Open();
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select * from inventory";
+            cmd.CommandType = CommandType.Text;
+            OracleDataReader rd = cmd.ExecuteReader();
+
+            rd.Read();
+            for (int i = 0; i < rd.FieldCount; i++)
+            {
+                ll.Add(rd.GetName(i));
+            }
+
+            con.Close();
+
+            //TODO: Make this allocation dynamic
+            label1.Text = ll[0];
+            label2.Text = ll[1];
+            label3.Text = ll[2];
+            label4.Text = ll[3];
+
+        }
+
+
         private bool searchValueInDatabase(int id)
         {
             OracleConnection con = new OracleConnection("Data Source=localhost;User Id=PROJECT;Password=anup;");
@@ -42,7 +72,6 @@ namespace WindowsFormsApp2
             textBox2.ReadOnly = state2;
             textBox3.ReadOnly = state3;
             textBox4.ReadOnly = state4;
-
         }
 
         
@@ -53,8 +82,8 @@ namespace WindowsFormsApp2
             con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
-            cmd.CommandText = "insert into inventory values(id.nextval,'" + textBox2.Text + "'," + "'" + textBox3.Text + "'," + textBox4.Text + ")";
-            //cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "insert into inventory values(incrementer.nextval,'" + textBox2.Text + "'," + "'" + textBox3.Text + "'," + textBox4.Text + ")";
+            cmd.CommandType = CommandType.Text;
             int rw = cmd.ExecuteNonQuery();
             if (rw == 0)
             {
@@ -108,7 +137,6 @@ namespace WindowsFormsApp2
             MessageBox.Show("Please enter the ID of the row you want to update");
             changeFieldState(false);
            
-            
         }
 
         public void updateRecords(int id)
@@ -118,7 +146,7 @@ namespace WindowsFormsApp2
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
             cmd.CommandText = "update inventory set model='" + textBox2.Text + "',type='" + textBox3.Text + "',amount=" + textBox4.Text + " where id=" + textBox1.Text;
-            //cmd.CommandType = CommandType.Text;
+            cmd.CommandType = CommandType.Text;
             int rw = cmd.ExecuteNonQuery();
             if (rw == 0)
             {
@@ -129,7 +157,6 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Successfull!");
             }
             con.Close();
-            // "update inventory set model=textbox2 
         }
 
         public void deleteRecords(int id)
@@ -147,7 +174,7 @@ namespace WindowsFormsApp2
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = con;
                 cmd.CommandText = "delete from inventory where id=" + textBox1.Text;
-                //cmd.CommandType = CommandType.Text;
+                cmd.CommandType = CommandType.Text;
                 int rw = cmd.ExecuteNonQuery();
                 if (rw == 0)
                 {
@@ -255,6 +282,11 @@ namespace WindowsFormsApp2
             changeFieldState(false);
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void TextBox2_TextChanged(object sender, EventArgs e)
         {
             enableButton();
@@ -286,9 +318,5 @@ namespace WindowsFormsApp2
             }
         }
 
-
-        // string test = "insert into inventory values(id.nextval, 'textbox1.text', 'textbox2.text', textbox3.text)";
     }
 }
-
-// enable button function checks if all three textboxes are having some data
