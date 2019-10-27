@@ -49,7 +49,7 @@ namespace form1
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            //timer1.Start();
+            timer1.Start();
         }
 
         private void button2_Click(object sender, EventArgs e)
