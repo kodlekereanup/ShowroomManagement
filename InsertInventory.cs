@@ -17,6 +17,7 @@ namespace WindowsFormsApp2
         // flags for selecting the the right CRUD operation and displaying 
         // the correct text on the button
         bool insert = false, update = false, delete = false, change = false;
+        int idinc = 0;
        
         public InsertInventory()
         {
@@ -82,7 +83,7 @@ namespace WindowsFormsApp2
             con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
-            cmd.CommandText = "insert into inventory values(incrementer.nextval,'" + textBox2.Text + "'," + "'" + textBox3.Text + "'," + textBox4.Text + ")";
+            cmd.CommandText = "insert into inventory values(" + ++idinc + ",'" + textBox2.Text + "'," + "'" + textBox3.Text + "'," + textBox4.Text + ")";
             cmd.CommandType = CommandType.Text;
             int rw = cmd.ExecuteNonQuery();
             if (rw == 0)
@@ -92,6 +93,10 @@ namespace WindowsFormsApp2
             else
             {
                 MessageBox.Show("Successfull!");
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
             }
             con.Close();
         }
@@ -121,7 +126,7 @@ namespace WindowsFormsApp2
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            MainMenu mm = new MainMenu();
+            Inventory mm = new Inventory();
             this.Hide();
             mm.ShowDialog();
             this.Close();
@@ -155,6 +160,10 @@ namespace WindowsFormsApp2
             else
             {
                 MessageBox.Show("Successfull!");
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
             }
             con.Close();
         }
@@ -183,6 +192,12 @@ namespace WindowsFormsApp2
                 else
                 {
                     MessageBox.Show("Successfull!");
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    textBox4.Text = "";
+                    if (idinc != 0) idinc--;
+                    else MessageBox.Show("Database is Empty! Nothing to delete");
                 }
                 con.Close();
             }
@@ -194,18 +209,24 @@ namespace WindowsFormsApp2
             if (insert && !update && !delete)
             {
                 insertRecords();
+                button6.Text = "Operation";
+                button6.Enabled = false;
 
             }
             else if (update && !insert && !delete)
             {
                 int id = Int16.Parse(textBox1.Text);
                 updateRecords(id);
+                button6.Text = "Operation";
+                button6.Enabled = false;
 
             }
             else if (delete && !insert && !update)
             {
                 int id = Int16.Parse(textBox1.Text);
                 deleteRecords(id);
+                button6.Text = "Operation";
+                button6.Enabled = false;
 
             }
 
